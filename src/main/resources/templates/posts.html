@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Blog</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="style/styleCss.css"/>-->
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1" style="font-weight: bold;">MyCodeBlog</span>
+            <a href="/posts/newpost" class="btn btn-primary" role="button">Novo Post</a>
+        </nav>
+    </header>
+
+    <section>
+    <div class="container"  style="width: 60%;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                <li class="breadcrumb-item active" aria-current="page">Posts</li>
+            </ol>
+        </nav>
+        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" th:each="post : ${posts}">
+            <div class="card-body">
+                <h8 class="card-subtitle mb-2 text-muted">
+                    <span th:text="${post.autor}"></span>
+                    <span th:text="${post.data}"></span>
+                </h8>
+                <h4 class="card-title" style="font-weight: bold; padding-top: 15px;"><span th:text="${post.titulo}"></span></h4>
+                <p class="card-text" style="font-style: italic;"><span th:text="${post.resumo}"></span></p>
+                <a th:href="${(#mvc.url('BC#getPostDetails').arg(0, post.id)).build()}" class="card-link">Acessar</a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+</body>
+</html>

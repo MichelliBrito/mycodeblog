@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Blog</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1" style="font-weight: bold;">MyCodeBlog</span>
+            <a href="/posts/newpost" class="btn btn-primary" role="button">Novo Post</a>
+        </nav>
+
+    </header>
+
+    <section>
+    <div class="container"  style="width: 60%;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                <li class="breadcrumb-item"><a href="/posts">Posts</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Post</li>
+            </ol>
+        </nav>
+        <div>
+            <h2 class="card-title" style="font-weight: bold; margin-bottom: 20px;"><span th:text="${post.titulo}"></span></h2>
+            <h8 class="card-subtitle mb-2 text-muted">
+                <i class="material-icons">person_outline</i>
+                <span th:text="${post.autor}"></span>
+                <br>
+                <i class="material-icons">date_range</i>
+                <span th:text="${post.data}"></span>
+            </h8>
+            <p class="card-text" style="margin-top: 30px; font-style: italic;"><span th:text="${post.resumo}"></span></p>
+            <p class="card-text" style="margin-top: 40px;"><span th:utext="${post.texto}"></span></p>
+        </div>
+    </div>
+    </section>
+
+</body>
+</html>
