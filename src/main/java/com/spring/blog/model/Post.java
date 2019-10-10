@@ -22,9 +22,6 @@ public class Post {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
     private LocalDate data;
-    
-    @Lob
-    private String resumo;
 
     @NotBlank
     @Lob
@@ -52,14 +49,6 @@ public class Post {
 
     public void setAutor(String autor) {
         this.autor = autor;
-    }
-
-    public String getResumo() {
-        return resumo;
-    }
-
-    public void setResumo(String resumo) {
-        this.resumo = resumo;
     }
 
     public LocalDate getData() {

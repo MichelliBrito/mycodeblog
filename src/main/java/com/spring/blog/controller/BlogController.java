@@ -42,16 +42,16 @@ public class BlogController {
         return mv;
     }
 
-    @RequestMapping(value="/posts/newpost", method=RequestMethod.GET)
+    @RequestMapping(value="/newpost", method=RequestMethod.GET)
     public String getPostForm(){
         return "postForm";
     }
 
-    @RequestMapping(value="/posts/newpost", method=RequestMethod.POST)
+    @RequestMapping(value="/newpost", method=RequestMethod.POST)
     public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes){
         if(result.hasErrors()){
             attributes.addFlashAttribute("mensagem", "Verifique se os campos obrigatórios foram preenchidos!");
-            return "redirect:/posts/newpost";
+            return "redirect:/newpost";
         }
         post.setData(LocalDate.now());
         blogService.save(post);

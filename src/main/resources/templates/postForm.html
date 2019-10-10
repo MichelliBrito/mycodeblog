@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
-    <title>Blog</title>
+    <title>MyCodeBlog</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <!-- Bootstrap CSS -->
@@ -39,9 +39,6 @@
                 <div class="form-group">
                     <input type="text" class="form-control" name="autor" placeholder="Autor *">
                 </div>
-                <div class="form-group">
-                    <textarea type="text" class="form-control" name="resumo" placeholder="Resumo"></textarea>
-                </div>
 
                 <textarea id="summernote" type="text" class="form-control" name="texto" placeholder="Texto *"></textarea>
 
@@ -59,7 +56,7 @@
     $('#summernote').summernote({
         placeholder: 'Texto *',
         tabsize: 2,
-        height: 220
+        height: 300
     });
 </script>
 
