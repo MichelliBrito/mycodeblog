@@ -1,5 +1,5 @@
 # mycodeblog
-Curso de Spring Boot com Thymeleaf, Bootstrap, PostgreSQL e Spring Security mostrando o passo a passo de como construir um blog. Deploy da aplicação na AWS Elastic Beanstalk: http://blog-dev222.us-west-2.elasticbeanstalk.com/posts 
+Curso de Spring Boot com Thymeleaf, Bootstrap, PostgreSQL e Spring Security mostrando o passo a passo de como construir um blog. 
 
 Scriptspara inserir o summernote no formulário:
 
